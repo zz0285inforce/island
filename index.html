@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台東 & 綠島 四天三夜行程</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2a9d8f;
+            --secondary: #264653;
+            --accent: #e9c46a;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--bg);
+            color: var(--secondary);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .day-section {
+            margin-bottom: 2.5rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .day-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .day-header h2 { margin: 0; font-size: 1.25rem; }
+
+        .timeline {
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .event {
+            display: flex;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #e9ecef;
+        }
+
+        .event:last-child { margin-bottom: 0; border-left: 2px solid transparent; }
+
+        .event::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent);
+            border-radius: 50%;
+        }
+
+        .time {
+            min-width: 80px;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .details {
+            flex-grow: 1;
+        }
+
+        .details h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: #6c757d;
+            background: #f1f3f5;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .map-container {
+            height: 250px;
+            width: 100%;
+            border-top: 1px solid #eee;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 600px) {
+            .event { flex-direction: column; }
+            .time { margin-bottom: 0.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🚢 台東 & 綠島冒險之旅</h1>
+    <p>4/30 - 5/3 四天三夜行程規劃</p>
+</header>
+
+<div class="container">
+
+    <div class="day-section">
+        <div class="day-header">
+            <h2>Day 1 - 抵達台東 4/30 (四)</h2>
+            <span><i class="fas fa-motorcycle"></i> 東帝租車</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">14:30</div>
+                <div class="details">
+                    <h3>抵達台東機場 > 富岡漁港民宿</h3>
+                    <span class="note">領取機車，入住休息</span>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">下午</div>
+                <div class="details">
+                    <h3>台東森林公園 & 海濱公園</h3>
+                    <p>騎腳踏車、看夕陽、小白屋、大球拍照</p>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">晚上</div>
+                <div class="details">
+                    <h3>鐵花村音樂聚落 & 觀光夜市</h3>
+                </div>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z5Y-w5p2x5p6X5p6X5YWs5ZyS44CB6Zit6Iqx5p2R!5e0!3m2!1szh-TW!2stw!4v1709700000000"></iframe>
+        </div>
+    </div>
+
+    <div class="day-section">
+        <div class="day-header">
+            <h2>Day 2 - 跨海綠島 5/1 (五)</h2>
+            <span><i class="fas fa-ship"></i> 船程 50 min</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">07:30</div>
+                <div class="details">
+                    <h3>富岡漁港 > 綠島</h3>
+                    <span class="note">悅欣租車 | 前往「浪浪」寄放行李</span>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">上午</div>
+                <div class="details">
+                    <h3>環島半圈</h3>
+                    <p>綠島燈塔、人權紀念公園</p>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">下午</div>
+                <div class="details">
+                    <h3>石朗潛水區</h3>
+                    <p>浮潛/潛水體驗（看海底郵筒）</p>
+                    <span class="note">替代方案：玻璃船</span>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">晚上</div>
+                <div class="details">
+                    <h3>綠島夜生活</h3>
+                    <p>夜巡梅花鹿</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-section">
+        <div class="day-header">
+            <h2>Day 3 - 海上冒險 5/2 (六)</h2>
+            <span><i class="fas fa-fish"></i> 船拋體驗</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">04:00</div>
+                <div class="details">
+                    <h3>集合準備「船拋」海上釣魚</h3>
+                    <span class="note">熱血晨釣</span>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">08:30</div>
+                <div class="details">
+                    <h3>返回民宿盥洗補眠</h3>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">下午</div>
+                <div class="details">
+                    <h3>東岸巡禮</h3>
+                    <p>小長城（哈巴狗與睡美人）、觀音洞</p>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">傍晚</div>
+                <div class="details">
+                    <h3>朝日溫泉</h3>
+                    <p>世界級海水溫泉泡湯</p>
+                </div>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z57ag5bO25pyd5pel5rqr5rOJ44CB57ag5bO25bCP6ZW35Z-O!5e0!3m2!1szh-TW!2stw!4v1709700000000"></iframe>
+        </div>
+    </div>
+
+    <div class="day-section">
+        <div class="day-header">
+            <h2>Day 4 - 歸賦 5/3 (日)</h2>
+            <span><i class="fas fa-home"></i> 返回台北</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">09:30</div>
+                <div class="details">
+                    <h3>大白沙走海中步道</h3>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">中午</div>
+                <div class="details">
+                    <h3>最後巡禮、採買伴手禮</h3>
+                    <p>海草蛋捲、南寮街閒晃喝咖啡</p>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">15:30</div>
+                <div class="details">
+                    <h3>碼頭還機車、候船</h3>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">20:25</div>
+                <div class="details">
+                    <h3>台東機場 > 台北松山</h3>
+                    <span class="note">旅程結束</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
