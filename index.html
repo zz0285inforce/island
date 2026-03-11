@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>東東的台東綠島冒險 - Dinotaeng Style</title>
+    <title>東東專屬的台東綠島之旅</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            /* Dinotaeng 經典配色：焦糖棕、奶油米、棉花糖白 */
             --primary: #7b5e4d;      /* 經典 Quokka 棕 */
             --secondary: #5d4037;    /* 深咖啡 */
             --accent: #f4a261;       /* 烤橘色 */
@@ -32,7 +31,7 @@
             color: var(--primary);
             padding: 3rem 1rem;
             text-align: center;
-            /* 模擬手繪邊框的感覺 */
+            /* 模擬手繪邊框  */
             border-radius: 0 0 40px 40px;
         }
 
@@ -129,7 +128,7 @@
         .note {
             font-size: 0.85rem;
             color: #fff;
-            background: var(--primary); /* 改為深棕色標籤 */
+            background: var(--primary); /* 深棕色標籤 */
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             display: inline-block;
@@ -165,7 +164,7 @@
 
 <header>
     <span class="user-tag">東東 <i class="fas fa-heart heart-icon"></i></span>
-    <h1>🚢 台東 & 綠島冒險之旅</h1>
+    <h1>🚢 台東 & 綠島之旅</h1>
     <p>4/30 - 5/3 ‧ 四天三夜行程表</p>
 </header>
 
@@ -180,7 +179,7 @@
             <div class="event">
                 <div class="time">14:30</div>
                 <div class="details">
-                    <h3>抵達台東機場 > 富岡漁港民宿</h3>
+                    <h3>抵達台東機場 ➔ 富岡漁港民宿</h3>
                     <span class="note">領取機車，入住休息</span>
                 </div>
             </div>
@@ -221,7 +220,7 @@
             <div class="event">
                 <div class="time">07:30</div>
                 <div class="details">
-                    <h3>富岡漁港 > 綠島</h3>
+                    <h3>富岡漁港 ➔ 綠島</h3>
                     <span class="note">悅欣租車 | 前往「浪浪」寄放</span>
                 </div>
             </div>
@@ -235,7 +234,7 @@
             <div class="event">
                 <div class="time">下午</div>
                 <div class="details">
-                    <h3>石朗潛水區</h3>
+                    <h3>石朗潛水區(替代方案 :玻璃船)</h3>
                     <p>浮潛/潛水體驗（看海底郵筒）</p>
                 </div>
             </div>
@@ -297,6 +296,19 @@
                 </div>
             </div>
         </div>
+        <div class="map-wrapper">
+            <p style="margin-bottom: 15px; font-weight: 900; font-size: 1rem; color: var(--primary);">📍 綠島環島手繪地圖</p>
+            <svg class="map-svg" viewBox="0 0 300 200">
+                <path d="M150,20 Q220,30 230,100 Q220,170 150,185 Q80,170 70,100 Q80,30 150,20" class="land" style="fill: #e8f5e9;"/>
+                <path d="M150,30 Q210,40 220,100 Q210,160 150,175 Q90,160 80,100 Q90,40 150,30" class="path-line" />
+                <circle cx="110" cy="40" r="5" class="spot"/> <text x="118" y="35" class="label">燈塔</text>
+                <circle cx="80" cy="95" r="5" class="spot" style="fill: var(--secondary);"/> <text x="35" y="100" class="label">南寮碼頭</text>
+                <circle cx="95" cy="140" r="5" class="spot"/> <text x="45" y="155" class="label">石朗(潛水)</text>
+                <circle cx="215" cy="95" r="5" class="spot"/> <text x="225" y="100" class="label">小長城</text>
+                <circle cx="190" cy="165" r="5" class="spot"/> <text x="195" y="182" class="label">朝日溫泉</text>
+                <circle cx="140" cy="175" r="5" class="spot"/> <text x="110" y="195" class="label">大白沙</text>
+            </svg>
+        </div>
     </div>
 
     <div class="day-section">
@@ -312,7 +324,7 @@
             <div class="event">
                 <div class="time">中午</div>
                 <div class="details">
-                    <h3>最後巡禮、採買伴手禮</h3>
+                    <h3>逛街、採買伴手禮</h3>
                     <p>海草蛋捲、南寮街閒晃喝咖啡</p>
                 </div>
             </div>
@@ -323,7 +335,7 @@
             <div class="event">
                 <div class="time">20:25</div>
                 <div class="details">
-                    <h3>台東機場 > 台北松山</h3>
+                    <h3>台東機場 ➔ 台北松山</h3>
                     <span class="note">旅程結束</span>
                 </div>
             </div>
@@ -334,3 +346,4 @@
 
 </body>
 </html>
+
