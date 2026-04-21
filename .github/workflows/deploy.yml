@@ -1,0 +1,24 @@
+name: Deploy Travel Web
+on:
+  push:
+    branches: [ main ] 
+
+permissions:
+  contents: write 
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. 檢出原始碼
+        uses: actions/checkout@v4
+
+      - name: 2. 注入 API 金鑰
+        #  __MAPS_API_KEY__ 替換成 GitHub Secrets 存的金鑰
+        run: sed -i "s/__MAPS_API_KEY__/${{ secrets.MAPS_API_KEY }}/g" index.html
+
+      - name: 3. 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./ # 部署目前的資料夾內容
