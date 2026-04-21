@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>東東專屬的台東綠島之旅</title>
+    <title>東東的台東綠島冒險 - Dinotaeng Style</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary: #7b5e4d;      /* 經典 Quokka 棕 */
+            --primary: #7b5e4d;      /* Quokka 棕 */
             --secondary: #5d4037;    /* 深咖啡 */
             --accent: #f4a261;       /* 烤橘色 */
             --bg: #f9f3e9;           /* 奶油米色底 */
             --card-bg: #ffffff;      /* 純白卡片 */
-            --map-water: #e0f2f1;    /* 淺粉藍水域 */
-            --map-land: #efe0ca;     /* 燕麥色陸地 */
             --text: #4a3a35;
         }
 
@@ -29,315 +27,151 @@
             background-color: var(--card-bg);
             border-bottom: 4px solid var(--primary);
             color: var(--primary);
-            padding: 3rem 1rem;
+            padding: 2.5rem 1rem;
             text-align: center;
-            /* 模擬手繪邊框  */
             border-radius: 0 0 40px 40px;
         }
 
-        .user-tag {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            display: block;
-            color: var(--accent);
-        }
+        .user-tag { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; display: block; color: var(--accent); }
+        .heart-icon { color: #e76f51; margin-left: 5px; animation: pulse 1.5s infinite; display: inline-block; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
 
-        .heart-icon {
-            color: #e76f51;
-            margin-left: 5px;
-            display: inline-block;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        h1 { margin: 0; font-size: 1.8rem; letter-spacing: 1px; }
-        header p { margin: 10px 0 0; font-weight: bold; opacity: 0.8; }
-
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .day-section {
-            margin-bottom: 3rem;
-            background: var(--card-bg);
-            border-radius: 30px; /* 超圓潤邊角 */
-            overflow: hidden;
-            box-shadow: 0 8px 0px rgba(123, 94, 77, 0.1); /* 扁平化陰影 */
-            border: 2px solid #eee;
-        }
-
-        .day-header {
-            background-color: #fdfaf5;
-            border-bottom: 2px dashed var(--primary);
-            color: var(--primary);
-            padding: 1.2rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .day-section { margin-bottom: 2.5rem; background: var(--card-bg); border-radius: 30px; overflow: hidden; box-shadow: 0 8px 0px rgba(123, 94, 77, 0.1); border: 2px solid #eee; }
+        .day-header { background-color: #fdfaf5; border-bottom: 2px dashed var(--primary); color: var(--primary); padding: 1.2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
         .day-header h2 { margin: 0; font-size: 1.3rem; font-weight: 900; }
 
-        .timeline {
-            padding: 2rem;
-            position: relative;
-        }
-
-        .event {
-            display: flex;
-            margin-bottom: 2rem;
-            position: relative;
-            padding-left: 25px;
-            border-left: 3px solid #f0e6d6;
-        }
-
+        .timeline { padding: 1.5rem 2rem; }
+        .event { display: flex; margin-bottom: 1.5rem; position: relative; padding-left: 20px; border-left: 3px solid #f0e6d6; }
         .event:last-child { margin-bottom: 0; border-left: 3px solid transparent; }
+        .event::before { content: ''; position: absolute; left: -9px; top: 5px; width: 14px; height: 14px; background-color: var(--accent); border-radius: 4px; border: 2px solid #fff; }
 
-        /* 棉花糖風格的點點 */
-        .event::before {
-            content: '';
-            position: absolute;
-            left: -9px;
-            top: 5px;
-            width: 15px;
-            height: 15px;
-            background-color: var(--accent);
-            border-radius: 5px; /* 方圓形狀 */
-            border: 2px solid #fff;
-        }
+        .time { min-width: 85px; font-weight: 900; color: var(--primary); font-size: 0.95rem; }
+        .details h3 { margin: 0 0 0.3rem 0; font-size: 1.1rem; color: var(--secondary); }
+        .details p { margin: 0; font-size: 0.9rem; opacity: 0.85; }
+        .note { font-size: 0.8rem; color: #fff; background: var(--primary); padding: 0.2rem 0.7rem; border-radius: 15px; display: inline-block; margin-top: 5px; font-weight: bold; }
+        .important { color: #d62828; background: #fff0f0; padding: 5px 10px; border-radius: 10px; font-size: 0.85rem; margin: 10px 0; display: block; border: 1px solid #ffcfcf; font-weight: bold; }
 
-        .time {
-            min-width: 85px;
-            font-weight: 900;
-            color: var(--primary);
-            font-size: 1rem;
-        }
-
-        .details { flex-grow: 1; }
-        .details h3 { margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--secondary); }
-        .details p { margin: 0; font-size: 0.95rem; opacity: 0.9; }
-
-        .note {
-            font-size: 0.85rem;
-            color: #fff;
-            background: var(--primary); /* 深棕色標籤 */
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 8px;
-            font-weight: bold;
-        }
-
-        /* SVG Map Styling - Dinotaeng Palette */
-        .map-wrapper {
-            background-color: var(--map-water);
-            padding: 30px 20px;
-            text-align: center;
-            border-top: 2px dashed #eee;
-        }
-        .map-svg {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-        }
-        .land { fill: var(--map-land); stroke: var(--primary); stroke-width: 1.5; }
-        .spot { fill: var(--accent); stroke: #fff; stroke-width: 2; }
-        .label { font-size: 11px; font-weight: 900; fill: var(--secondary); }
-        .path-line { fill: none; stroke: var(--primary); stroke-width: 2; stroke-dasharray: 6; opacity: 0.3; }
-
-        @media (max-width: 600px) {
-            .event { flex-direction: column; padding-left: 20px; }
-            .time { margin-bottom: 0.4rem; font-size: 1.1rem; }
-            .user-tag { font-size: 1.5rem; }
-        }
+        .map-static { width: 100%; display: block; background-color: #e0f2f1; min-height: 200px; border-top: 2px dashed #eee; }
+        @media (max-width: 600px) { .event { flex-direction: column; } .time { margin-bottom: 0.3rem; } }
     </style>
 </head>
 <body>
 
 <header>
-    <span class="user-tag">東東專屬 <i class="fas fa-heart heart-icon"></i></span>
-    <h1>🚢 台東 & 綠島之旅</h1>
-    <p>4/30 - 5/3 ‧ 四天三夜行程表</p>
+    <span class="user-tag">東東 <i class="fas fa-heart heart-icon"></i></span>
+    <h1>🚢 台東 & 綠島冒險之旅</h1>
+    <p>4/30 - 5/3 ‧ 2026 行程手帳</p>
 </header>
 
 <div class="container">
 
     <div class="day-section">
         <div class="day-header">
-            <h2>Day 1 - 抵達台東 4/30 (四)</h2>
+            <h2>Day 1 ‧ 台東 4/30 (四)</h2>
             <span><i class="fas fa-motorcycle"></i> 東帝租車</span>
         </div>
         <div class="timeline">
             <div class="event">
-                <div class="time">14:30</div>
+                <div class="time">14:35</div>
                 <div class="details">
-                    <h3>抵達台東機場 ➔ 富岡漁港民宿</h3>
-                    <span class="note">領取機車，入住休息</span>
+                    <h3>抵達台東機場</h3>
+                    <p>富岡漁港民宿放行李 ➔ 森林公園 & 海濱公園</p>
+                    <p>小白屋、大球拍照、夕陽</p>
                 </div>
             </div>
             <div class="event">
-                <div class="time">下午</div>
+                <div class="time">19:00</div>
                 <div class="details">
-                    <h3>台東森林公園 & 海濱公園</h3>
-                    <p>騎腳踏車、看夕陽、小白屋、大球拍照</p>
-                </div>
-            </div>
-            <div class="event">
-                <div class="time">晚上</div>
-                <div class="details">
-                    <h3>鐵花村音樂聚落 & 觀光夜市</h3>
+                    <h3>鐵花村 & 正氣路夜市</h3>
+                    <span class="note">必吃：藍蜻蜓炸雞、林家臭豆腐</span>
                 </div>
             </div>
         </div>
-        
-        <div class="map-wrapper">
-            <p style="margin-bottom: 15px; font-weight: 900; font-size: 1rem; color: var(--primary);">📍 台東市區手繪地圖</p>
-            <svg class="map-svg" viewBox="0 0 300 180">
-                <path d="M0,20 L120,20 L150,80 L130,180 L0,180 Z" class="land" />
-                <circle cx="40" cy="50" r="6" class="spot"/> <text x="52" y="55" class="label">機場</text>
-                <circle cx="100" cy="80" r="6" class="spot"/> <text x="112" y="85" class="label">森林公園</text>
-                <circle cx="115" cy="110" r="6" class="spot"/> <text x="127" y="115" class="label">海濱公園</text>
-                <circle cx="85" cy="130" r="6" class="spot"/> <text x="45" y="135" class="label">鐵花村/夜市</text>
-                <circle cx="140" cy="40" r="7" class="spot" style="fill: var(--secondary);"/> <text x="155" y="45" class="label">富岡漁港</text>
-            </svg>
-        </div>
+        <img class="map-static" src="https://maps.googleapis.com/maps/api/staticmap?center=22.756,121.154&zoom=13&size=800x300&markers=color:orange%7Clabel:A%7C22.756,121.154&markers=color:brown%7Clabel:B%7C22.763,121.164&key=__MAPS_API_KEY__" alt="Day 1 Map">
     </div>
 
     <div class="day-section">
         <div class="day-header">
-            <h2>Day 2 - 跨海綠島 5/1 (五)</h2>
-            <span><i class="fas fa-ship"></i> 船程 50 min</span>
+            <h2>Day 2 ‧ 綠島 5/1 (五)</h2>
+            <span><i class="fas fa-ship"></i> 悅欣租車</span>
         </div>
         <div class="timeline">
             <div class="event">
                 <div class="time">07:30</div>
                 <div class="details">
-                    <h3>富岡漁港 ➔ 綠島</h3>
-                    <span class="note">悅欣租車 | 前往「浪浪」寄放</span>
+                    <h3>跨海航行</h3>
+                    <span class="important">⚠️ 06:30 抵達港口取票排隊</span>
+                    <p>民宿放行李(浪浪) ➔ 展開環島</p>
                 </div>
             </div>
+            <div class="event">
+                <div class="time">日間行程</div>
+                <div class="details">
+                    <h3>環島大冒險</h3>
+                    <p>綠島燈塔、小長城步道、哈巴狗與睡美人岩</p>
+                    <p>牛頭山、大白沙玩水、人權紀念公園</p>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">19:00</div>
+                <div class="details">
+                    <h3>夜巡梅花鹿</h3>
+                    <p>或參與潮間帶導覽</p>
+                </div>
+            </div>
+        </div>
+        <img class="map-static" src="https://maps.googleapis.com/maps/api/staticmap?center=22.67,121.48&zoom=12&size=800x300&markers=color:orange%7C22.678,121.464&markers=color:orange%7C22.668,121.498&key=__MAPS_API_KEY__" alt="Day 2 Map">
+    </div>
+
+    <div class="day-section">
+        <div class="day-header">
+            <h2>Day 3 ‧ 綠島 5/2 (六)</h2>
+            <span><i class="fas fa-swimmer"></i> 潛水與溫泉</span>
+        </div>
+        <div class="timeline">
             <div class="event">
                 <div class="time">上午</div>
                 <div class="details">
-                    <h3>環島半圈</h3>
-                    <p>綠島燈塔、人權紀念公園</p>
-                </div>
-            </div>
-            <div class="event">
-                <div class="time">下午</div>
-                <div class="details">
-                    <h3>石朗潛水區(替代方案 :玻璃船)</h3>
-                    <p>浮潛/潛水體驗（看海底郵筒）</p>
+                    <h3>【分流行程】</h3>
+                    <p>🤿 情侶A：石朗/柴口浮潛 (約2hr)</p>
+                    <p>🌊 情侶B：朝日溫泉、海底郵筒、柚子湖</p>
                 </div>
             </div>
             <div class="event">
                 <div class="time">晚上</div>
                 <div class="details">
-                    <h3>綠島夜生活</h3>
-                    <p>夜巡梅花鹿</p>
+                    <h3>最後的 Chill</h3>
+                    <p>買伴手禮 (花生糖、海草) ➔ 海邊酒吧小酌</p>
                 </div>
             </div>
         </div>
-
-        <div class="map-wrapper">
-            <p style="margin-bottom: 15px; font-weight: 900; font-size: 1rem; color: var(--primary);">📍 綠島環島手繪地圖</p>
-            <svg class="map-svg" viewBox="0 0 300 200">
-                <path d="M150,20 Q220,30 230,100 Q220,170 150,185 Q80,170 70,100 Q80,30 150,20" class="land" style="fill: #e8f5e9;"/>
-                <path d="M150,30 Q210,40 220,100 Q210,160 150,175 Q90,160 80,100 Q90,40 150,30" class="path-line" />
-                <circle cx="110" cy="40" r="5" class="spot"/> <text x="118" y="35" class="label">燈塔</text>
-                <circle cx="80" cy="95" r="5" class="spot" style="fill: var(--secondary);"/> <text x="35" y="100" class="label">南寮碼頭</text>
-                <circle cx="95" cy="140" r="5" class="spot"/> <text x="45" y="155" class="label">石朗(潛水)</text>
-                <circle cx="215" cy="95" r="5" class="spot"/> <text x="225" y="100" class="label">小長城</text>
-                <circle cx="190" cy="165" r="5" class="spot"/> <text x="195" y="182" class="label">朝日溫泉</text>
-                <circle cx="140" cy="175" r="5" class="spot"/> <text x="110" y="195" class="label">大白沙</text>
-            </svg>
-        </div>
+        <img class="map-static" src="https://maps.googleapis.com/maps/api/staticmap?center=22.64,121.49&zoom=13&size=800x300&markers=color:red%7C22.637,121.503&markers=color:blue%7C22.658,121.466&key=__MAPS_API_KEY__" alt="Day 3 Map">
     </div>
 
     <div class="day-section">
         <div class="day-header">
-            <h2>Day 3 - 海上冒險 5/2 (六)</h2>
-            <span><i class="fas fa-fish"></i> 船拋體驗</span>
+            <h2>Day 4 ‧ 歸賦 5/3 (日)</h2>
+            <span><i class="fas fa-home"></i> 台北松山</span>
         </div>
         <div class="timeline">
             <div class="event">
-                <div class="time">04:00</div>
+                <div class="time">上午</div>
                 <div class="details">
-                    <h3>集合準備「船拋」海上釣魚</h3>
-                    <span class="note">熱血晨釣</span>
-                </div>
-            </div>
-            <div class="event">
-                <div class="time">08:30</div>
-                <div class="details">
-                    <h3>返回民宿盥洗補眠</h3>
-                </div>
-            </div>
-            <div class="event">
-                <div class="time">下午</div>
-                <div class="details">
-                    <h3>東岸巡禮</h3>
-                    <p>小長城（哈巴狗與睡美人）、觀音洞</p>
-                </div>
-            </div>
-            <div class="event">
-                <div class="time">傍晚</div>
-                <div class="details">
-                    <h3>朝日溫泉</h3>
-                    <p>世界級海水溫泉泡湯</p>
-                </div>
-            </div>
-        </div>
-        <div class="map-wrapper">
-            <p style="margin-bottom: 15px; font-weight: 900; font-size: 1rem; color: var(--primary);">📍 綠島環島手繪地圖</p>
-            <svg class="map-svg" viewBox="0 0 300 200">
-                <path d="M150,20 Q220,30 230,100 Q220,170 150,185 Q80,170 70,100 Q80,30 150,20" class="land" style="fill: #e8f5e9;"/>
-                <path d="M150,30 Q210,40 220,100 Q210,160 150,175 Q90,160 80,100 Q90,40 150,30" class="path-line" />
-                <circle cx="110" cy="40" r="5" class="spot"/> <text x="118" y="35" class="label">燈塔</text>
-                <circle cx="80" cy="95" r="5" class="spot" style="fill: var(--secondary);"/> <text x="35" y="100" class="label">南寮碼頭</text>
-                <circle cx="95" cy="140" r="5" class="spot"/> <text x="45" y="155" class="label">石朗(潛水)</text>
-                <circle cx="215" cy="95" r="5" class="spot"/> <text x="225" y="100" class="label">小長城</text>
-                <circle cx="190" cy="165" r="5" class="spot"/> <text x="195" y="182" class="label">朝日溫泉</text>
-                <circle cx="140" cy="175" r="5" class="spot"/> <text x="110" y="195" class="label">大白沙</text>
-            </svg>
-        </div>
-    </div>
-
-    <div class="day-section">
-        <div class="day-header">
-            <h2>Day 4 - 歸賦 5/3 (日)</h2>
-            <span><i class="fas fa-home"></i> 返回台北</span>
-        </div>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">09:30</div>
-                <div class="details"><h3>大白沙走海中步道</h3></div>
-            </div>
-            <div class="event">
-                <div class="time">中午</div>
-                <div class="details">
-                    <h3>逛街、採買伴手禮</h3>
-                    <p>海草蛋捲、南寮街閒晃喝咖啡</p>
+                    <h3>補景點巡禮</h3>
+                    <p>將軍岩、象鼻岩、海參坪</p>
                 </div>
             </div>
             <div class="event">
                 <div class="time">16:30</div>
-                <div class="details"><h3>搭船返回富岡 ➔ 轉往機場</h3></div>
+                <div class="details">
+                    <h3>船班回台東</h3>
+                    <span class="important">⚠️ 15:30 還車，提前 30-60 分報到</span>
+                </div>
             </div>
             <div class="event">
                 <div class="time">20:25</div>
-                <div class="details">
-                    <h3>台東機場 ➔ 台北松山</h3>
-                    <span class="note">旅程結束</span>
-                </div>
+                <div class="details"><h3>台東起飛 ➔ 21:25 抵達松山</h3></div>
             </div>
         </div>
     </div>
@@ -346,5 +180,3 @@
 
 </body>
 </html>
-
-
