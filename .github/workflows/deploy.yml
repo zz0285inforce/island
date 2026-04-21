@@ -1,7 +1,7 @@
 name: Deploy Travel Web
 on:
   push:
-    branches: [ main ] 
+    branches: ["*"] 
 
 permissions:
   contents: write 
