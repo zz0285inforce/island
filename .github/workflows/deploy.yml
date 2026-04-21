@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 2. 注入 API 金鑰
-        #  __MAPS_API_KEY__ 替換成 GitHub Secrets 存的金鑰
         run: sed -i "s/__MAPS_API_KEY__/${{ secrets.MAPS_API_KEY }}/g" index.html
 
       - name: 3. 部署到 GitHub Pages
