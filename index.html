@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>東東的台東綠島冒險 - Dinotaeng Style</title>
+    <title>東東的台東綠島</title>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
@@ -59,28 +59,24 @@
         /* 地圖容器設定 */
         .map-container { 
             width: 100%; 
-            height: 250px; 
+            height: 280px; 
             background-color: #e0f2f1; 
             border-top: 2px dashed #eee; 
             z-index: 1; 
         }
 
-        /* 地圖地名標籤的可愛樣式 */
+        /* 地名標籤樣式 */
         .leaflet-tooltip.cute-label {
             background-color: var(--primary);
             color: #ffffff;
             border: none;
             border-radius: 12px;
             font-weight: bold;
-            font-size: 0.85rem;
-            padding: 4px 10px;
+            font-size: 0.8rem;
+            padding: 3px 8px;
             box-shadow: 0 3px 6px rgba(123, 94, 77, 0.3);
-            font-family: 'PingFang TC', 'Quicksand', 'Microsoft JhengHei', sans-serif;
         }
-        /* 讓標籤下方的小三角形顏色也跟著變 */
-        .leaflet-tooltip.cute-label::before {
-            border-top-color: var(--primary) !important;
-        }
+        .leaflet-tooltip.cute-label::before { border-top-color: var(--primary) !important; }
         
         @media (max-width: 600px) { .event { flex-direction: column; } .time { margin-bottom: 0.3rem; } }
     </style>
@@ -89,7 +85,7 @@
 
 <header>
     <span class="user-tag">東東 <i class="fas fa-heart heart-icon"></i></span>
-    <h1>🚢 台東 & 綠島冒險之旅</h1>
+    <h1>🚢 台東 & 綠島之旅</h1>
     <p>4/30 - 5/3 ‧ 2026 行程手帳</p>
 </header>
 
@@ -105,7 +101,7 @@
                 <div class="time">14:35</div>
                 <div class="details">
                     <h3>抵達台東機場</h3>
-                    <p>富岡漁港民宿放行李 ➔ 森林公園 & 海濱公園</p>
+                    <p>富岡漁港 ➔ 森林公園 & 海濱公園</p>
                     <p>小白屋、大球拍照、夕陽</p>
                 </div>
             </div>
@@ -131,22 +127,15 @@
                 <div class="details">
                     <h3>跨海航行</h3>
                     <span class="important">⚠️ 06:30 抵達港口取票排隊</span>
-                    <p>民宿放行李(浪浪) ➔ 展開環島</p>
+                    <p>民宿放行李(浪浪別館) ➔ 展開環島</p>
                 </div>
             </div>
             <div class="event">
                 <div class="time">日間行程</div>
                 <div class="details">
                     <h3>環島大冒險</h3>
-                    <p>綠島燈塔、小長城步道、哈巴狗與睡美人岩</p>
+                    <p>綠島燈塔、小長城、哈巴狗與睡美人岩</p>
                     <p>牛頭山、大白沙玩水、人權紀念公園</p>
-                </div>
-            </div>
-            <div class="event">
-                <div class="time">19:00</div>
-                <div class="details">
-                    <h3>夜巡梅花鹿</h3>
-                    <p>或參與潮間帶導覽</p>
                 </div>
             </div>
         </div>
@@ -163,15 +152,8 @@
                 <div class="time">上午</div>
                 <div class="details">
                     <h3>【分流行程】</h3>
-                    <p>🤿 情侶A：石朗/柴口浮潛 (約2hr)</p>
-                    <p>🌊 情侶B：朝日溫泉、海底郵筒、柚子湖</p>
-                </div>
-            </div>
-            <div class="event">
-                <div class="time">晚上</div>
-                <div class="details">
-                    <h3>最後的 Chill</h3>
-                    <p>買伴手禮 (花生糖、海草) ➔ 海邊酒吧小酌</p>
+                    <p>🤿 情侶A：石朗浮潛 / 海底郵筒</p>
+                    <p>🌊 情侶B：朝日溫泉、柚子湖探險</p>
                 </div>
             </div>
         </div>
@@ -180,29 +162,26 @@
 
     <div class="day-section">
         <div class="day-header">
-            <h2>Day 4 ‧ 歸賦 5/3 (日)</h2>
+            <h2>Day 4 ‧ 回家 5/3 (日)</h2>
             <span><i class="fas fa-home"></i> 台北松山</span>
         </div>
         <div class="timeline">
             <div class="event">
                 <div class="time">上午</div>
                 <div class="details">
-                    <h3>補景點巡禮</h3>
-                    <p>將軍岩、象鼻岩、海參坪</p>
+                    <h3>最後景點巡禮</h3>
+                    <p>將軍岩、象鼻岩、海參坪散策</p>
                 </div>
             </div>
             <div class="event">
                 <div class="time">16:30</div>
                 <div class="details">
                     <h3>船班回台東</h3>
-                    <span class="important">⚠️ 15:30 還車，提前 30-60 分報到</span>
+                    <span class="important">⚠️ 15:30 還車報到</span>
                 </div>
             </div>
-            <div class="event">
-                <div class="time">20:25</div>
-                <div class="details"><h3>台東起飛 ➔ 21:25 抵達松山</h3></div>
-            </div>
         </div>
+        <div id="map-day4" class="map-container"></div>
     </div>
 
 </div>
@@ -212,61 +191,47 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         
-        // --- 共用的圖層設定 (使用不擋 Referer 的 CARTO 柔和圖層) ---
         const osmLayer = function() {
             return L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                attribution: '&copy; OSM'
             });
         };
 
         const defaultIcon = L.icon({
             iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
             shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-            iconSize: [25, 41], // 圖標大小
-            iconAnchor: [12, 41], // 圖標錨點 (指在地圖上的哪一點)
-            popupAnchor: [1, -34], // 彈出視窗錨點
-            tooltipAnchor: [16, -28], // 提示框錨點
-            shadowSize: [41, 41] // 陰影大小
+            iconSize: [25, 41], iconAnchor: [12, 41], tooltipAnchor: [16, -28]
         });
 
-        // --- 設定 Tooltip 的共用參數 ---
-        const tooltipOptions = {
-            permanent: true,       // 永遠顯示
-            direction: 'top',      // 顯示在圖釘的上方
-            className: 'cute-label', // 套用我們寫的可愛 CSS 樣式
-            offset: [0, -15]       // 稍微往上移一點，避免擋到藍色圖釘
-        };
-
-        // --- Day 1 地圖 (台東市區) ---
-        const map1 = L.map('map-day1').setView([22.756, 121.154], 14);
-        osmLayer().addTo(map1);
+        const tooltipOptions = { permanent: true, direction: 'top', className: 'cute-label', offset: [0, -15] };
         
-        // 在建立 Marker 時，明確加入 { icon: defaultIcon }
-        L.marker([22.756, 121.154], { icon: defaultIcon }).addTo(map1)
-            .bindTooltip('富岡漁港民宿', tooltipOptions);
-        L.marker([22.763, 121.164], { icon: defaultIcon }).addTo(map1)
-            .bindTooltip('海濱公園', tooltipOptions);
+        const map1 = L.map('map-day1').setView([22.775, 121.165], 13);
+        osmLayer().addTo(map1);
+        L.marker([22.7538, 121.1494], { icon: defaultIcon }).addTo(map1).bindTooltip('正氣路夜市', tooltipOptions);
+        L.marker([22.7932, 121.1887], { icon: defaultIcon }).addTo(map1).bindTooltip('富岡漁港', tooltipOptions);
+        L.marker([22.7630, 121.1640], { icon: defaultIcon }).addTo(map1).bindTooltip('海濱公園', tooltipOptions);
 
-
-        // --- Day 2 地圖 (綠島環島) ---
-        const map2 = L.map('map-day2').setView([22.673, 121.48], 13);
+        const map2 = L.map('map-day2').setView([22.67, 121.485], 13);
         osmLayer().addTo(map2);
+        L.marker([22.6732, 121.4645], { icon: defaultIcon }).addTo(map2).bindTooltip('浪浪別館', tooltipOptions);
+        L.marker([22.6778, 121.4645], { icon: defaultIcon }).addTo(map2).bindTooltip('綠島燈塔', tooltipOptions);
+        L.marker([22.6845, 121.4925], { icon: defaultIcon }).addTo(map2).bindTooltip('牛頭山', tooltipOptions);
+        L.marker([22.6772, 121.4855], { icon: defaultIcon }).addTo(map2).bindTooltip('人權紀念公園', tooltipOptions);
+        L.marker([22.6648, 121.4995], { icon: defaultIcon }).addTo(map2).bindTooltip('小長城', tooltipOptions);
+        L.marker([22.6621, 121.5028], { icon: defaultIcon }).addTo(map2).bindTooltip('睡美人/哈巴狗', tooltipOptions);
+        L.marker([22.6465, 121.4820], { icon: defaultIcon }).addTo(map2).bindTooltip('大白沙', tooltipOptions);
 
-        L.marker([22.678, 121.464], { icon: defaultIcon }).addTo(map2)
-            .bindTooltip('綠島燈塔', tooltipOptions);
-        L.marker([22.668, 121.498], { icon: defaultIcon }).addTo(map2)
-            .bindTooltip('小長城步道', tooltipOptions);
-
-
-        // --- Day 3 地圖 (綠島南端) ---
-        const map3 = L.map('map-day3').setView([22.645, 121.485], 13);
+        const map3 = L.map('map-day3').setView([22.655, 121.485], 13);
         osmLayer().addTo(map3);
+        L.marker([22.6575, 121.4658], { icon: defaultIcon }).addTo(map3).bindTooltip('海底郵筒', tooltipOptions);
+        L.marker([22.6370, 121.5030], { icon: defaultIcon }).addTo(map3).bindTooltip('朝日溫泉', tooltipOptions);
+        L.marker([22.6705, 121.5035], { icon: defaultIcon }).addTo(map3).bindTooltip('柚子湖', tooltipOptions);
 
-        L.marker([22.637, 121.503], { icon: defaultIcon }).addTo(map3)
-            .bindTooltip('朝日溫泉', tooltipOptions);
-        L.marker([22.658, 121.466], { icon: defaultIcon }).addTo(map3)
-            .bindTooltip('石朗浮潛區', tooltipOptions);
-
+        const map4 = L.map('map-day4').setView([22.675, 121.49], 14);
+        osmLayer().addTo(map4);
+        L.marker([22.6790, 121.4852], { icon: defaultIcon }).addTo(map4).bindTooltip('將軍岩', tooltipOptions);
+        L.marker([22.6778, 121.4875], { icon: defaultIcon }).addTo(map4).bindTooltip('象鼻岩', tooltipOptions);
+        L.marker([22.6652, 121.4985], { icon: defaultIcon }).addTo(map4).bindTooltip('海參坪', tooltipOptions);
     });
 </script>
 
