@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>東東的台東綠島 - Dinotaeng Style</title>
+    <title>東東的台東綠島冒險 - Dinotaeng Style</title>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
@@ -56,13 +56,30 @@
         .note { font-size: 0.8rem; color: #fff; background: var(--primary); padding: 0.2rem 0.7rem; border-radius: 15px; display: inline-block; margin-top: 5px; font-weight: bold; }
         .important { color: #d62828; background: #fff0f0; padding: 5px 10px; border-radius: 10px; font-size: 0.85rem; margin: 10px 0; display: block; border: 1px solid #ffcfcf; font-weight: bold; }
 
-        /* 修改：地圖容器設定 (Leaflet 需要明確的高度) */
+        /* 地圖容器設定 */
         .map-container { 
             width: 100%; 
-            height: 250px; /* 可以根據喜好調整高度 */
+            height: 250px; 
             background-color: #e0f2f1; 
             border-top: 2px dashed #eee; 
-            z-index: 1; /* 避免 Leaflet 控制項蓋到其他元素 */
+            z-index: 1; 
+        }
+
+        /* 地圖地名標籤的可愛樣式 */
+        .leaflet-tooltip.cute-label {
+            background-color: var(--primary);
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            box-shadow: 0 3px 6px rgba(123, 94, 77, 0.3);
+            font-family: 'PingFang TC', 'Quicksand', 'Microsoft JhengHei', sans-serif;
+        }
+        /* 讓標籤下方的小三角形顏色也跟著變 */
+        .leaflet-tooltip.cute-label::before {
+            border-top-color: var(--primary) !important;
         }
         
         @media (max-width: 600px) { .event { flex-direction: column; } .time { margin-bottom: 0.3rem; } }
@@ -72,7 +89,7 @@
 
 <header>
     <span class="user-tag">東東 <i class="fas fa-heart heart-icon"></i></span>
-    <h1>🚢 台東 & 綠島之旅</h1>
+    <h1>🚢 台東 & 綠島冒險之旅</h1>
     <p>4/30 - 5/3 ‧ 2026 行程手帳</p>
 </header>
 
@@ -193,42 +210,62 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-    // 確保網頁載入完成後再初始化地圖
     document.addEventListener('DOMContentLoaded', function() {
         
-        // --- 共用的圖層設定 (OpenStreetMap) ---
+        // --- 共用的圖層設定 (使用不擋 Referer 的 CARTO 柔和圖層) ---
         const osmLayer = function() {
             return L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             });
         };
-        
+
+        const defaultIcon = L.icon({
+            iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+            shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+            iconSize: [25, 41], // 圖標大小
+            iconAnchor: [12, 41], // 圖標錨點 (指在地圖上的哪一點)
+            popupAnchor: [1, -34], // 彈出視窗錨點
+            tooltipAnchor: [16, -28], // 提示框錨點
+            shadowSize: [41, 41] // 陰影大小
+        });
+
+        // --- 設定 Tooltip 的共用參數 ---
+        const tooltipOptions = {
+            permanent: true,       // 永遠顯示
+            direction: 'top',      // 顯示在圖釘的上方
+            className: 'cute-label', // 套用我們寫的可愛 CSS 樣式
+            offset: [0, -15]       // 稍微往上移一點，避免擋到藍色圖釘
+        };
+
         // --- Day 1 地圖 (台東市區) ---
-        // 依照你原本的中心點 22.756, 121.154，縮放級別 13
-        const map1 = L.map('map-day1').setView([22.756, 121.154], 13);
+        const map1 = L.map('map-day1').setView([22.756, 121.154], 14);
         osmLayer().addTo(map1);
         
-        // 加入標記點
-        L.marker([22.756, 121.154]).addTo(map1).bindPopup('景點 A');
-        L.marker([22.763, 121.164]).addTo(map1).bindPopup('景點 B');
+        // 在建立 Marker 時，明確加入 { icon: defaultIcon }
+        L.marker([22.756, 121.154], { icon: defaultIcon }).addTo(map1)
+            .bindTooltip('富岡漁港民宿', tooltipOptions);
+        L.marker([22.763, 121.164], { icon: defaultIcon }).addTo(map1)
+            .bindTooltip('海濱公園', tooltipOptions);
 
 
         // --- Day 2 地圖 (綠島環島) ---
-        // 中心點 22.67, 121.48，縮放級別 13 (稍微拉近一點比12好看)
-        const map2 = L.map('map-day2').setView([22.67, 121.48], 13);
+        const map2 = L.map('map-day2').setView([22.673, 121.48], 13);
         osmLayer().addTo(map2);
 
-        L.marker([22.678, 121.464]).addTo(map2).bindPopup('綠島燈塔 / 柴口');
-        L.marker([22.668, 121.498]).addTo(map2).bindPopup('小長城 / 海參坪');
+        L.marker([22.678, 121.464], { icon: defaultIcon }).addTo(map2)
+            .bindTooltip('綠島燈塔', tooltipOptions);
+        L.marker([22.668, 121.498], { icon: defaultIcon }).addTo(map2)
+            .bindTooltip('小長城步道', tooltipOptions);
 
 
         // --- Day 3 地圖 (綠島南端) ---
-        // 中心點 22.64, 121.49，縮放級別 13
-        const map3 = L.map('map-day3').setView([22.64, 121.49], 13);
+        const map3 = L.map('map-day3').setView([22.645, 121.485], 13);
         osmLayer().addTo(map3);
 
-        L.marker([22.637, 121.503]).addTo(map3).bindPopup('朝日溫泉');
-        L.marker([22.658, 121.466]).addTo(map3).bindPopup('石朗浮潛區');
+        L.marker([22.637, 121.503], { icon: defaultIcon }).addTo(map3)
+            .bindTooltip('朝日溫泉', tooltipOptions);
+        L.marker([22.658, 121.466], { icon: defaultIcon }).addTo(map3)
+            .bindTooltip('石朗浮潛區', tooltipOptions);
 
     });
 </script>
