@@ -101,7 +101,7 @@
                 <div class="time">14:35</div>
                 <div class="details">
                     <h3>抵達台東機場</h3>
-                    <p>富岡漁港 ➔ 森林公園 & 海濱公園</p>
+                    <p>富岡漁港 ➔ 森林公園 & 海濱公園 (阿羅哈自行車出租) </p>
                     <p>小白屋、大球拍照、夕陽</p>
                 </div>
             </div>
@@ -135,7 +135,7 @@
                 <div class="details">
                     <h3>環島大冒險</h3>
                     <p>綠島燈塔、小長城、哈巴狗與睡美人岩</p>
-                    <p>牛頭山、大白沙玩水、人權紀念公園</p>
+                    <p>牛頭山(日落)、大白沙玩水、人權紀念公園</p>
                 </div>
             </div>
         </div>
@@ -153,7 +153,7 @@
                 <div class="details">
                     <h3>【分流行程】</h3>
                     <p>🤿 情侶A：石朗浮潛 / 海底郵筒</p>
-                    <p>🌊 情侶B：朝日溫泉、柚子湖探險</p>
+                    <p>🌊 情侶B：朝日溫泉(日出)、柚子湖探險</p>
                 </div>
             </div>
         </div>
@@ -210,29 +210,28 @@
         L.marker([22.7538, 121.1494], { icon: defaultIcon }).addTo(map1).bindTooltip('正氣路夜市', tooltipOptions);
         L.marker([22.7932, 121.1887], { icon: defaultIcon }).addTo(map1).bindTooltip('富岡漁港', tooltipOptions);
         L.marker([22.7630, 121.1640], { icon: defaultIcon }).addTo(map1).bindTooltip('海濱公園', tooltipOptions);
-
-        const map2 = L.map('map-day2').setView([22.67, 121.485], 13);
+    
+        const map2 = L.map('map-day2').setView([22.663, 121.482], 13);
         osmLayer().addTo(map2);
-        L.marker([22.6732, 121.4645], { icon: defaultIcon }).addTo(map2).bindTooltip('浪浪別館', tooltipOptions);
-        L.marker([22.6778, 121.4645], { icon: defaultIcon }).addTo(map2).bindTooltip('綠島燈塔', tooltipOptions);
+        L.marker([22.6446, 121.4994], { icon: defaultIcon }).addTo(map2).bindTooltip('浪浪別館', tooltipOptions);
+        L.marker([22.6785, 121.4646], { icon: defaultIcon }).addTo(map2).bindTooltip('綠島燈塔', tooltipOptions);
+        L.marker([22.6766, 121.4820], { icon: defaultIcon }).addTo(map2).bindTooltip('人權紀念公園', tooltipOptions);
         L.marker([22.6845, 121.4925], { icon: defaultIcon }).addTo(map2).bindTooltip('牛頭山', tooltipOptions);
-        L.marker([22.6772, 121.4855], { icon: defaultIcon }).addTo(map2).bindTooltip('人權紀念公園', tooltipOptions);
-        L.marker([22.6648, 121.4995], { icon: defaultIcon }).addTo(map2).bindTooltip('小長城', tooltipOptions);
-        L.marker([22.6621, 121.5028], { icon: defaultIcon }).addTo(map2).bindTooltip('睡美人/哈巴狗', tooltipOptions);
-        L.marker([22.6465, 121.4820], { icon: defaultIcon }).addTo(map2).bindTooltip('大白沙', tooltipOptions);
+        L.marker([22.6635, 121.4965], { icon: defaultIcon }).addTo(map2).bindTooltip('小長城', tooltipOptions);
+        L.marker([22.6605, 121.4988], { icon: defaultIcon }).addTo(map2).bindTooltip('哈巴狗/睡美人', tooltipOptions);
+        L.marker([22.6415, 121.4865], { icon: defaultIcon }).addTo(map2).bindTooltip('大白沙', tooltipOptions);
 
         const map3 = L.map('map-day3').setView([22.655, 121.485], 13);
         osmLayer().addTo(map3);
-        L.marker([22.6575, 121.4658], { icon: defaultIcon }).addTo(map3).bindTooltip('海底郵筒', tooltipOptions);
+        L.marker([22.6565, 121.4665], { icon: defaultIcon }).addTo(map3).bindTooltip('海底郵筒', tooltipOptions);
         L.marker([22.6370, 121.5030], { icon: defaultIcon }).addTo(map3).bindTooltip('朝日溫泉', tooltipOptions);
-        L.marker([22.6705, 121.5035], { icon: defaultIcon }).addTo(map3).bindTooltip('柚子湖', tooltipOptions);
+        L.marker([22.6685, 121.4958], { icon: defaultIcon }).addTo(map3).bindTooltip('柚子湖', tooltipOptions);
 
-        const map4 = L.map('map-day4').setView([22.675, 121.49], 14);
+        const map4 = L.map('map-day4').setView([22.670, 121.492], 14);
         osmLayer().addTo(map4);
-        L.marker([22.6790, 121.4852], { icon: defaultIcon }).addTo(map4).bindTooltip('將軍岩', tooltipOptions);
-        L.marker([22.6778, 121.4875], { icon: defaultIcon }).addTo(map4).bindTooltip('象鼻岩', tooltipOptions);
-        L.marker([22.6652, 121.4985], { icon: defaultIcon }).addTo(map4).bindTooltip('海參坪', tooltipOptions);
-    });
+        L.marker([22.6788, 121.4842], { icon: defaultIcon }).addTo(map4).bindTooltip('將軍岩', tooltipOptions);
+        L.marker([22.6775, 121.4855], { icon: defaultIcon }).addTo(map4).bindTooltip('象鼻岩', tooltipOptions);
+        L.marker([22.6625, 121.4975], { icon: defaultIcon }).addTo(map4).bindTooltip('海參坪', tooltipOptions);    });
 </script>
 
 </body>
