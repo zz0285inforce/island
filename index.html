@@ -197,40 +197,55 @@
             });
         };
 
+        // 完美置中對齊的圖標設定
         const defaultIcon = L.icon({
             iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
             shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-            iconSize: [25, 41], iconAnchor: [12, 41], tooltipAnchor: [0, -35]
+            iconSize: [25, 41], 
+            iconAnchor: [12, 41], 
+            tooltipAnchor: [0, -35] // 讓標籤對齊正上方
         });
 
-        const tooltipOptions = { permanent: true, direction: 'top', className: 'cute-label', offset: [0, -5] };
-        
+        const tooltipOptions = { 
+            permanent: true, 
+            direction: 'top', 
+            className: 'cute-label', 
+            offset: [0, -5] // 保留呼吸空間
+        };
+
+        // --- Day 1 (台東) ---
         const map1 = L.map('map-day1').setView([22.775, 121.165], 13);
         osmLayer().addTo(map1);
         L.marker([22.7538, 121.1494], { icon: defaultIcon }).addTo(map1).bindTooltip('正氣路夜市', tooltipOptions);
         L.marker([22.7932, 121.1887], { icon: defaultIcon }).addTo(map1).bindTooltip('富岡漁港', tooltipOptions);
         L.marker([22.7630, 121.1640], { icon: defaultIcon }).addTo(map1).bindTooltip('海濱公園', tooltipOptions);
-    
-        const map2 = L.map('map-day2').setView([22.663, 121.482], 13);
+
+        // --- Day 2 (綠島環島) ---
+        const map2 = L.map('map-day2').setView([22.665, 121.488], 13);
         osmLayer().addTo(map2);
         L.marker([22.6446, 121.4994], { icon: defaultIcon }).addTo(map2).bindTooltip('浪浪別館', tooltipOptions);
+        L.marker([22.6415, 121.4865], { icon: defaultIcon }).addTo(map2).bindTooltip('大白沙', tooltipOptions);
         L.marker([22.6770, 121.4665], { icon: defaultIcon }).addTo(map2).bindTooltip('綠島燈塔', tooltipOptions);
         L.marker([22.6748, 121.4966], { icon: defaultIcon }).addTo(map2).bindTooltip('人權紀念公園', tooltipOptions);
         L.marker([22.6865, 121.4968], { icon: defaultIcon }).addTo(map2).bindTooltip('牛頭山', tooltipOptions);
         L.marker([22.6631, 121.4996], { icon: defaultIcon }).addTo(map2).bindTooltip('小長城', tooltipOptions);
-        L.marker([22.6558, 121.5096], { icon: defaultIcon }).addTo(map2).bindTooltip('哈巴狗與睡美人', tooltipOptions);      L.marker([22.6415, 121.4865], { icon: defaultIcon }).addTo(map2).bindTooltip('大白沙', tooltipOptions);
+        L.marker([22.6558, 121.5096], { icon: defaultIcon }).addTo(map2).bindTooltip('哈巴狗與睡美人', tooltipOptions);
 
+        // --- Day 3 (活動) ---
         const map3 = L.map('map-day3').setView([22.655, 121.485], 13);
         osmLayer().addTo(map3);
         L.marker([22.6565, 121.4665], { icon: defaultIcon }).addTo(map3).bindTooltip('海底郵筒', tooltipOptions);
         L.marker([22.6370, 121.5030], { icon: defaultIcon }).addTo(map3).bindTooltip('朝日溫泉', tooltipOptions);
-        L.marker([22.6685, 121.4958], { icon: defaultIcon }).addTo(map3).bindTooltip('柚子湖', tooltipOptions);
+        L.marker([22.6681, 121.5028], { icon: defaultIcon }).addTo(map3).bindTooltip('柚子湖', tooltipOptions);
 
+        // --- Day 4 (景點) ---
         const map4 = L.map('map-day4').setView([22.672, 121.492], 14);
         osmLayer().addTo(map4);
         L.marker([22.6788, 121.4862], { icon: defaultIcon }).addTo(map4).bindTooltip('將軍岩', tooltipOptions);
         L.marker([22.6766, 121.4851], { icon: defaultIcon }).addTo(map4).bindTooltip('象鼻岩', tooltipOptions);
-        L.marker([22.6618, 121.4988], { icon: defaultIcon }).addTo(map4).bindTooltip('海參坪', tooltipOptions);</script>
+        L.marker([22.6618, 121.4988], { icon: defaultIcon }).addTo(map4).bindTooltip('海參坪', tooltipOptions);
+    });
+</script>
 
 </body>
 </html>
